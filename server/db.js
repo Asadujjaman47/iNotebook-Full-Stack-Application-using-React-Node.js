@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 // const mongoURI = "mongodb://localhost:27017"
-const mongoURI = "mongodb://127.0.0.1:27017" //fast
+const mongoURI = "mongodb://127.0.0.1:27017/inote" //fast
 
 
 // mongoose v7 way one:

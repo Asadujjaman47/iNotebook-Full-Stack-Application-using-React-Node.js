@@ -9,6 +9,8 @@ connectToMongo();
 const app = express();
 const port = 3001;
 
+// for use req body, use this middleware
+app.use(express.json());
 
 // app.get('/', (req, res) => {
 //     res.send("Hi");
