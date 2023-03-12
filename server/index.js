@@ -2,11 +2,13 @@ const connectToMongo = require('./db');
 
 const express = require('express');
 const mongoose = require('mongoose');
+const dotenv = require("dotenv");
 
 // db connection
 connectToMongo();
 
 const app = express();
+dotenv.config();
 const port = 3001;
 
 // for use req body, use this middleware
