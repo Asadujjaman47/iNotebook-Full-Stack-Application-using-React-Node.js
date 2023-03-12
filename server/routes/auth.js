@@ -31,10 +31,10 @@ router.post(
     // user.save();
     // res.send(req.body);
 
-    // If there are erros, return Bad request and the erros
-    const erros = validationResult(req);
-    if (!erros.isEmpty()) {
-      return res.status(400).json({ erros: erros.array() });
+    // If there are errors, return Bad request and the errors
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
     }
 
     // CHeck wheather the user with this email exists already
@@ -80,10 +80,10 @@ router.post(
     body("password", "Password cannot be blank").exists(),
   ],
   async (req, res) => {
-    // If there are erros, return Bad request and the erros
-    const erros = validationResult(req);
-    if (!erros.isEmpty()) {
-      return res.status(400).json({ erros: erros.array() });
+    // If there are errors, return Bad request and the errors
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
     }
 
     const { email, password } = req.body;
@@ -92,14 +92,14 @@ router.post(
       if (!user) {
         return res
           .status(400)
-          .json({ erros: "Please try to login with correct credentials" });
+          .json({ errors: "Please try to login with correct credentials" });
       }
 
       const passwordCompare = await bcrypt.compare(password, user.password);
       if (!passwordCompare) {
         return res
           .status(400)
-          .json({ erros: "Please try to login with correct credentials" });
+          .json({ errors: "Please try to login with correct credentials" });
       }
 
       const data = {
