@@ -23,7 +23,6 @@ const UserSchema = new Schema({
 });
 
 const User = mongoose.model('user', UserSchema);
-User.createIndexes(); // duplicate mail prevent 
 module.exports = User;
 
 
