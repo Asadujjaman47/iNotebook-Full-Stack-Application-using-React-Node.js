@@ -1,15 +1,19 @@
 const connectToMongo = require("./db");
 
 const express = require("express");
-const mongoose = require("mongoose");
+const cors = require('cors');
 const dotenv = require("dotenv");
+
+dotenv.config();
+
 
 // db connection
 connectToMongo();
 
 const app = express();
-dotenv.config();
 const port = 3001;
+
+app.use(cors());
 
 // for use req body, use this middleware
 app.use(express.json());
