@@ -1,7 +1,7 @@
-const connectToMongo = require('./db');
+const connectToMongo = require("./db");
 
-const express = require('express');
-const mongoose = require('mongoose');
+const express = require("express");
+const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 
 // db connection
@@ -19,10 +19,9 @@ app.use(express.json());
 // })
 
 // Available Routes
-app.use('/api/auth', require('./routes/auth'));
-app.use('/api/notes', require('./routes/notes'));
+app.use("/api/auth", require("./routes/auth"));
+app.use("/api/notes", require("./routes/notes"));
 
-
-app.listen(port, ()=> {
-    console.log(`App listening at ${port} port`);
-})
+app.listen(port, () => {
+  console.log(`App listening at ${port} port`);
+});
