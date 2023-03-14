@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Login = (props) => {
   const host = "http://localhost:3001";
 
   let navigate = useNavigate();
@@ -28,8 +28,10 @@ const Login = () => {
       localStorage.setItem("token", json.authtoken);
 
       navigate("/");
+      props.showAlert("Logged in Successfully", "success");
     } else {
-      alert("Invalid credentails");
+      // alert("Invalid credentails");
+      props.showAlert("Invalid Credentails", "danger");
     }
   };
 

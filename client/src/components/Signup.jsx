@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Signup = () => {
+const Signup = (props) => {
   const host = "http://localhost:3001";
 
   let navigate = useNavigate();
@@ -31,8 +31,10 @@ const Signup = () => {
     localStorage.setItem("token", json.authtoken);
 
     navigate("/");
+    props.showAlert("Account Creadted Successfully", "success");
     // } else {
-    //   alert("Invalid credentails");
+    //  // alert("Invalid credentails");
+    // props.showAlert("Invalid details", "danger");
     // }
   };
 
