@@ -30,7 +30,7 @@ const Signup = (props) => {
     // Save the auth token and redirect
     localStorage.setItem("token", json.authtoken);
 
-    navigate("/");
+    navigate("/login");
     props.showAlert("Account Creadted Successfully", "success");
     // } else {
     //  // alert("Invalid credentails");
@@ -42,7 +42,9 @@ const Signup = (props) => {
     setCredentails({ ...credentails, [e.target.name]: e.target.value });
   };
   return (
-    <div>
+    <div className="container mt-3">
+      <h1 className="my-2">Create a account to use iNotebook</h1>
+
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="name" className="form-label">
