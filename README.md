@@ -119,7 +119,7 @@ PUT /api/notes/updatenote/:id
 Delete note:
 
 ```http
-DELET /api/notes/deletenote/:id
+DELETE /api/notes/deletenote/:id
 ```
 
 ## Lessons Learned
